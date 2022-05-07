@@ -21,6 +21,19 @@ class Bank {
   }
 }
 
+
+
+function calculateInvestmen() {
+  let moneyInvested = parseInt(prompt("Enter amount of money to invest:"));
+  let daysInvested = parseInt(prompt("Period to invest (days):"));
+
+  let investMentReturn = Math.round((moneyInvested * 43 * daysInvested)/36500);
+
+
+  alert("You will recive a total of " + (moneyInvested+investMentReturn) + " dollars in " + daysInvested + " days with an investment return of "+ investMentReturn + " dollars!");
+}
+
+
 function getClientInfo() {
   let name = prompt("Enter your name:");
   let document = parseInt(prompt("Enter your document:"));
@@ -39,7 +52,6 @@ function createNewClient(bank){
 
 function main() {
   const bank = new Bank();
-  createNewClient(bank);
   createNewClient(bank);
 
   console.log(bank);

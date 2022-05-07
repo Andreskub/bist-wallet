@@ -11,21 +11,28 @@
   </head>
 
   <body>
+    <header>
+      <div>
+        A site you can trust
+      </div>
+    </header>
 
-    <section class="containerStyle">
-      <h1>Bank</h1>
-      <input type="button" onClick="main()" Value="Create new Client" class="buttonStyle"/>
-      
-      <section class="containerStyle2">
-        <div>
-          <p>Unsorted List : [<span id = "initialList"></span>]</p>
-        </div>
-        <div>
-          <p>Sorted List : [<span id = "resultList"></span>]</p>
-        </div>      
+    <main>
+      <section class="containerStyle">
+        <h1>Investor Center</h1>
+        <input type="button" onClick="main()" Value="Create new Client" class="buttonStyle"/>
+  
+        <input type="button" onClick="calculateInvestmen()" Value="Calculate Investment" class="buttonStyle"/>
+        
       </section>
-      
-    </section>
+    </main>
+
+    <footer>
+      <div>
+        Investor Center &copy;
+      </div>
+    </footer>
+    
     <script src="./js/main.js"></script>
   </body>
 </html>
