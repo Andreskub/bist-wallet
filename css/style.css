@@ -1,7 +1,20 @@
 body {
-  background-color:teal;
+  margin: 0;
+  background-color:#81B29A;
   align-items: center;
   text-align: center;
+}
+
+header {
+  background-color: #F2CC8F;
+}
+
+main {
+  min-height: 100vh;
+}
+
+footer {
+  background-color: #F2CC8F;
 }
 
 h1 {
