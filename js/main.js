@@ -1,4 +1,3 @@
-
 class Product {
   constructor(productName, moneyInverted){
     this.name = productName;
@@ -21,9 +20,9 @@ class Bank {
   }
 }
 
+const bank = new Bank();
 
-
-function calculateInvestmen() {
+function calculateInvestment() {
   let moneyInvested = parseInt(prompt("Enter amount of money to invest:"));
   let daysInvested = parseInt(prompt("Period to invest (days):"));
 
@@ -33,7 +32,6 @@ function calculateInvestmen() {
   alert("You will recive a total of " + (moneyInvested+investMentReturn) + " dollars in " + daysInvested + " days with an investment return of "+ investMentReturn + " dollars!");
 }
 
-
 function getClientInfo() {
   let name = prompt("Enter your name:");
   let document = parseInt(prompt("Enter your document:"));
@@ -41,18 +39,14 @@ function getClientInfo() {
   return [name, document];
 }
 
-function createNewClient(bank){
+function createNewClient(){
   let clientInfo = getClientInfo();
   
   const newClient = new Client(clientInfo[0], clientInfo[1]);
 
   //Add client to bank
   bank.clients.push(newClient);
-}
-
-function main() {
-  const bank = new Bank();
-  createNewClient(bank);
-
   console.log(bank);
+
+  alert("Information submited correctly!");
 }
