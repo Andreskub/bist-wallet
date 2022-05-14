@@ -24,7 +24,7 @@ h1 {
 
 .containerStyle {
   text-align: center;
-  padding: 60px;
+  padding: 40px;
 }
 
 .containerStyle2 {
@@ -48,4 +48,9 @@ h1 {
   display: inline-block;
   font-size: 20px;
   margin: 10px;
+}
+
+.iconImage {
+  max-width: 200px;
+  max-height: 200px;
 }

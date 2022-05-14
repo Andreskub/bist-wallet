@@ -2,8 +2,8 @@
 Deliverable challenges for Javascript Course at CoderHouse
 
 <div align="center">
-    <h1> BIST Wallet </h1>
-    <img src=https://assets.mychoice2pay.com/www/blog/Digital_Wallet_1441X866px.png width="200"/>
+  <h1> BIST Wallet </h1>
+  <img src=https://assets.mychoice2pay.com/www/blog/Digital_Wallet_1441X866px.png width="200"/>
 </div>
 
 ## A virtual wallet simulator.
