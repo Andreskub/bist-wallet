@@ -62,13 +62,21 @@ function searchClient() {
 }
 
 function calculateInvestment() {
-  let moneyInvested = parseInt(prompt("Enter amount of money to invest:"));
-  let daysInvested = parseInt(prompt("Period to invest (days):"));
+  //let moneyInvested = parseInt(prompt("Enter amount of money to invest:"));
+  //let daysInvested = parseInt(prompt("Period to invest (days):"));
+
+  let moneyInvested = parseInt(document.getElementById("amount_to_invest").value);
+  let daysInvested = parseInt(document.getElementById("days_to_invest").value);
 
   let investMentReturn = Math.round((moneyInvested * 43 * daysInvested)/36500);
+  console.log(investMentReturn);
+  console.log(typeof(investMentReturn));
 
-
-  alert("You will recive a total of " + (moneyInvested+investMentReturn) + " dollars in " + daysInvested + " days with an investment return of "+ investMentReturn + " dollars!");
+  //alert("You will recive a total of " + (moneyInvested + investMentReturn) + " dollars in " + daysInvested + " days with an investment return of "+ investMentReturn + " dollars!");
+  
+  let p = document.getElementById("resultado");
+  console.log(p);
+  p.innerText = "You will recive a total of " + (moneyInvested + investMentReturn) + " dollars in " + daysInvested + " days with an investment return of "+ investMentReturn + " dollars!";
 }
 
 function createNewInvestment(client){

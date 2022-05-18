@@ -29,12 +29,40 @@
         <div class="container text-center mt-4 mb-4">
           <img src="./assets/bitcoin.png" alt="Bitcoin" class="iconImage">
           <h1 class="text-center p-4 align-middle">BIST</h1>
-        </div>
-
-        <div class="container justify-content-center">
-          <input type="button" onClick="calculateInvestment()" Value="Calculate Investment for FREE" class="buttonStyle"/>
+          <input type="button" onClick="calculateInvestment()" Value="Calculate Investment" class="buttonStyle"/>
         </div>
         
+      </section>
+
+      <!--Start Form-->
+      <section class="container">
+        <div class="d-flex justify-content-center">
+          <div class="col-lg-6 col-sm-12 boxBorder">
+            <form class="p-3">
+              <div class="form-group m-1">
+                <!-- Amount to Invest -->
+                <label for="amount_to_invest" class="control-label">Amount to invest</label>
+                <input type="number" class="form-control" id="amount_to_invest" name="amount" placeholder="Enter amount to invest">
+              </div>
+
+              <div class="form-group m-1">
+                <!-- Days to Invest -->
+                <label for="days_to_invest" class="control-label">Days to Invest</label>
+                <input type="number" class="form-control" id="days_to_invest" name="amount" placeholder="Enter days to invest">
+              </div>
+
+              <div class="form-group m-1 d-flex justify-content-center">                      
+                <div class="d-flex justify-content-end px-2">
+                  <button type="button" class="btn btn-primary buttonStyle" onclick="calculateInvestment()" >Calculate Investment for FREE</button>
+                  <!--<input type="button" onClick="calculateInvestment()" Value="Calculate Investment for FREE" class="buttonStyle"/>-->
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6 col-sm-12 boxBorder">
+            <p id="resultado">H</p>
+          </div>
+        </div>
       </section>
     </main>
 
