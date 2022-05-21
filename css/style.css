@@ -58,3 +58,7 @@ h1 {
 .boxBorder {
   box-shadow: 5px 5px 10px black;
 }
+
+.navImage {
+  max-height: 50px;
+}
