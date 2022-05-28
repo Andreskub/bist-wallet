@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color:#81B29A;
@@ -62,3 +69,6 @@ h1 {
 .navImage {
   max-height: 50px;
 }
+
+/* ----------------------------------------- */
+
