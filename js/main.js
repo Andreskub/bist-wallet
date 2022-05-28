@@ -14,85 +14,55 @@ class Client {
   }
 }
 
-class Bank {
-  constructor(){
-    this.clients = [];
-  }
-}
+const client = new Client("Usero01", "123456789")
 
-const bank = new Bank();
-
-function getClientInfo() {
-  let name = prompt("Enter your name:");
-  let document = parseInt(prompt("Enter your document:"));
-
-  return [name, document];
-}
-
-function createNewClient(){
-  let clientInfo = getClientInfo();
-  
-  const newClient = new Client(clientInfo[0], clientInfo[1]);
-
-  //Add client to bank
-  bank.clients.push(newClient);
-  console.log(bank);
-
-  alert("Information submited correctly!");
-}
-
-function searchClient() {
-  let client;
-  let flag = true;
-  let i = 0;
-
-  let userInput = prompt("Enter your name or document:");
-  
-  while (flag && i < bank.clients.length){
-
-    if (userInput == bank.clients[i].name || userInput == bank.clients[i].document){
-      client = bank.clients[i];
-      flag = false;
-    }
-
-    i++;
-  }
-
-  return client;
-}
-
-function calculateInvestment() {
-  let moneyInvested = parseInt(prompt("Enter amount of money to invest:"));
-  let daysInvested = parseInt(prompt("Period to invest (days):"));
+function getInputValues() {
+  let moneyInvested = parseInt(document.getElementById("amount_to_invest").value);
+  let daysInvested = parseInt(document.getElementById("days_to_invest").value);
 
   let investMentReturn = Math.round((moneyInvested * 43 * daysInvested)/36500);
 
-
-  alert("You will recive a total of " + (moneyInvested+investMentReturn) + " dollars in " + daysInvested + " days with an investment return of "+ investMentReturn + " dollars!");
+  return [moneyInvested, daysInvested, investMentReturn]
 }
 
-function createNewInvestment(client){
-  let moneyInvested = parseInt(prompt("Enter amount of money to invest:"));
-  let daysInvested = parseInt(prompt("Period to invest (days):"));
+const clearInputValues = () => {
+  document.getElementById("amount_to_invest").value = "";
+  document.getElementById("days_to_invest").value = "";
+}
 
-  let investMentReturn = Math.round((moneyInvested * 43 * daysInvested)/36500);
+const calculateInvestment = button => {
+  button.preventDefault();
 
-  const newInvestment = new Investment(moneyInvested, daysInvested, investMentReturn);
+  let values = getInputValues();
+  
+  let responseText = document.getElementById("queryResult");
+  console.log(responseText);
+  responseText.innerText = "You will recive a total of " + (values[0] + values[2]) + " dollars in " + values[1] + " days with an investment return of "+ values[2] + " dollars!";
+
+  clearInputValues();
+}
+
+let calculateButton = document.getElementById("calculateInvestmentButton");
+calculateButton.addEventListener("click", calculateInvestment);
+
+
+const createNewInvestment = button => {
+  button.preventDefault();
+
+  let values = getInputValues();
+
+  const newInvestment = new Investment(values[0], values[1], values[2]);
   client.investments.push(newInvestment);
-}
 
+  let responseText = document.getElementById("queryResult");
+  console.log(responseText);
+  responseText.innerText = "Your new investment was registered correctly!";
 
-function clientNewInvestment(){
-  const client = searchClient();
-  console.log("Client searched:");
+  console.log("Client");
   console.log(client);
 
-  if(client != null){
-    createNewInvestment(client);
-  } else {
-    alert("The client does not exist or the information provided is incorrect!");
-  }
-
-  console.log("Client's investments");
-  console.log(client.investments);
+  clearInputValues();
 }
+
+let createInvestmentButton = document.getElementById("newInvestmentButton");
+createInvestmentButton.addEventListener("click", createNewInvestment);
