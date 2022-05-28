@@ -1,7 +1,5 @@
 // cart array
 let cart;
-/*let cart = JSON.parse(localStorage.getItem("CART")) || [];
-updateCart();*/
 
 function setCart(){
   cart = JSON.parse(localStorage.getItem("CART")) || [];  
@@ -22,7 +20,6 @@ function addToCart(id) {
   }
   
   updateCart();
-  console.log(cart);
 }
 
 function updateCart() {
@@ -57,21 +54,21 @@ function renderCartItems() {
   $cart.innerHTML = ""; // clear cart element
   cart.forEach((item) => {
     $cart.innerHTML += `
-        <div class="cart-item">
-            <div class="item-info" onclick="removeItemFromCart(${item.id})">
-                <img src="${item.img}" alt="${item.name}">
-                <h4>${item.name}</h4>
-            </div>
-            <div class="unit-price">
-                <small>$</small>${item.price}
-            </div>
-            <div class="units">
-                <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
-                <div class="number">${item.numberOfUnits}</div>
-                <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
-            </div>
+      <div class="cart-item">
+        <div class="item-info" onclick="removeItemFromCart(${item.id})">
+          <img src="${item.img}" alt="${item.name}">
+          <h4>${item.name}</h4>
         </div>
-      `;
+        <div class="unit-price">
+          <small>$</small>${item.price}
+        </div>
+        <div class="units">
+          <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
+          <div class="number">${item.numberOfUnits}</div>
+          <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
+        </div>
+      </div>
+    `;
   });
 }
 
@@ -95,15 +92,4 @@ function changeNumberOfUnits(action, id) {
   });
 
   updateCart();
-}
-
-
-function showCart(){
-  $('.cart-overlay').addClass("transparent-bcg");
-  $('.cart').addClass("show-cart");
-}   
-
-function closeCart(){
-  $('.cart-overlay').removeClass("transparent-bcg");
-  $('.cart').removeClass("show-cart");
 }
