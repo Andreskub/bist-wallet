@@ -22,5 +22,21 @@ const data = [
     img: "./assets/bitcoin-transparent.png",
     price: 100,
     instock: 10
+  },
+  {
+    id: 4,
+    name: "Plazo Fijo a Largo Plazo",
+    investmentReturn: 200,
+    img: "./assets/bitcoin-transparent.png",
+    price: 100,
+    instock: 10
+  },
+  {
+    id: 5,
+    name: "Plazo Fijo a Largo Plazo",
+    investmentReturn: 200,
+    img: "./assets/bitcoin-transparent.png",
+    price: 100,
+    instock: 10
   }
 ];
