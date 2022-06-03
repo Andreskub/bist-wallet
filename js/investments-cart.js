@@ -9,7 +9,7 @@ function setCart(){
 //Add to cart
 function addToCart(id) {
   if (cart.some((item) => item.id === id)) {
-    changeNumberOfUnits("plus", id);
+    alert("The product is already in cart");
   } else {
     const item = data.find((product) => product.id == id);
 
@@ -62,34 +62,7 @@ function renderCartItems() {
         <div class="unit-price">
           <small>$</small>${item.price}
         </div>
-        <div class="units">
-          <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
-          <div class="number">${item.numberOfUnits}</div>
-          <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
-        </div>
       </div>
     `;
   });
-}
-
-// change number of units for an item
-function changeNumberOfUnits(action, id) {
-  cart = cart.map((item) => {
-    let numberOfUnits = item.numberOfUnits;
-
-    if (item.id === id) {
-      if (action === "minus" && numberOfUnits > 1) {
-        numberOfUnits--;
-      } else if (action === "plus" && numberOfUnits < item.instock) {
-        numberOfUnits++;
-      }
-    }
-
-    return {
-      ...item,
-      numberOfUnits,
-    };
-  });
-
-  updateCart();
 }
