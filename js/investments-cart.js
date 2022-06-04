@@ -59,7 +59,7 @@ function renderCartItems() {
   $cart.innerHTML = ""; // clear cart element
   cart.forEach((item) => {
     $cart.innerHTML += `
-      <div class="cart-item">
+      <div class="cart-item d-flex justify-content-around">
         <div class="item-info" onclick="removeItemFromCart(${item.id})">
           <img src="${item.img}" alt="${item.name}">
           <h4>${item.name}</h4>

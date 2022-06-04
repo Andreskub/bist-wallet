@@ -14,7 +14,7 @@ const $subtotal = document.querySelector(".subtotal");
 const $totalItems = document.querySelector(".total-items-in-cart");
 
 console.log(cart);
-
+/*
 function renderInvestments() {
   data.forEach((product) => {
     $products.innerHTML += `
@@ -32,7 +32,25 @@ function renderInvestments() {
             </div>
         `;
   });
+}*/
+
+function renderInvestments() {
+  data.forEach((product) => {
+    $products.innerHTML += `
+            <div class="card col-md-4 displayProduct">
+              <img src="${product.img}" alt="kayak Photo" class="card-img-top productImage" >
+              <div class="card-body">
+                <h5 class="card-title">${product.name}</h5>
+                <p class="card-text">$${product.price}</p>
+              </div>
+              <div class="add-to-cart" onclick="addToCart(${product.id})">
+                  <img src="./assets/cart-icon.png" alt="add to cart">
+              </div>
+            </div>
+        `;
+  });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   renderInvestments();

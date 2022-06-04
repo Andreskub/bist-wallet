@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <title>BIST Wallet</title>
 
     <!-- Linked Icon -->
@@ -32,32 +36,37 @@
             <img src="./assets/bitcoin.png" alt="Bitcoin" class="float-right iconImage">
           </div>
           <div class="col">
-            <h1 class="p-4">BIST</h1>
+            <div class="waviy P-4">
+              <span style="--i:1">B</span>
+              <span style="--i:2">I</span>
+              <span style="--i:3">S</span>
+              <span style="--i:4">T</span>
+             </div>
             <h3>A wallet you can trust</h3>
           </div>
         </div>
       </section>
 
-      <section class="container-fluid">
+      <section class="container">
         <div class="d-flex justify-content-center">
-          <div class="col products-list">
+          <div class="card-group">
             <div class="row products">
                 <!-- render porducts here -->
             </div>
           </div>
-            <div class="col cart">
-                <div class="cart-header">
+            <div class="cart">
+                <div class="d-flex cart-header justify-content-around">
                     <div class="column1">Item</div>
-                    <div class="column2">Unit price</div>
+                    <div class="column1">Unit price</div>
                 </div>
                 <div class="cart-items">
                     <!-- render cart items here -->
                 </div>
                 <div class="cart-footer">
-                    <div class="subtotal">
+                    <div class="d-flex justify-content-center subtotal">
                         Subtotal (0 items): $0
                     </div>
-                    <div class="checkout">
+                    <div class="d-flex justify-content-center checkout">
                         Proceed to checkout
                     </div>
                 </div>
