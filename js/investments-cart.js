@@ -9,7 +9,12 @@ function setCart(){
 //Add to cart
 function addToCart(id) {
   if (cart.some((item) => item.id === id)) {
-    alert("The product is already in cart");
+    Swal.fire({
+      title: 'Error!',
+      text: 'The product is already in cart',
+      icon: 'error',
+      confirmButtonText: 'Cool',
+    })
   } else {
     const item = data.find((product) => product.id == id);
 
