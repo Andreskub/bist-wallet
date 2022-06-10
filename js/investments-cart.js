@@ -16,8 +16,19 @@ function addToCart(id) {
       confirmButtonText: 'Cool',
     })
   } else {
-    const item = data.find((product) => product.id == id);
+    console.log("id:")
+    console.log(id)
 
+    const item = fetch('js/data.json')
+        .then( (resp) => resp.json())
+        .then( (data) => {
+          console.log(data);
+          data.find((product) => product.id == id);
+        })
+    //const item = data.find((product) => product.id == id);
+    console.log("item:")
+    console.log(item);
+    
     cart.push({
       ...item,
       numberOfUnits: 1,

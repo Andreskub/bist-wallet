@@ -13,7 +13,31 @@ const $cart = document.querySelector(".cart-items");
 const $subtotal = document.querySelector(".subtotal");
 const $totalItems = document.querySelector(".total-items-in-cart");
 
-console.log(cart);
+const data2 = fetch('js/data.json');
+console.log("Data aqui:")
+console.log(data2);
+
+function renderInvestments() {
+    fetch('js/data.json')
+        .then( (resp) => resp.json())
+        .then( (data) => {
+            console.log(data);
+            data.forEach((product) => {
+              $products.innerHTML += `
+                  <div class="card col-md-4 displayProduct">
+                      <img src="${product.img}" alt="kayak Photo" class="card-img-top productImage" >
+                      <div class="card-body">
+                          <h5 class="card-title">${product.name}</h5>
+                          <p class="card-text">$${product.price}</p>
+                      </div>
+                      <div class="add-to-cart" onclick="addToCart(${product.id})">
+                          <img src="./assets/cart-icon.png" alt="add to cart">
+                      </div>
+                  </div>
+              `;
+            })
+        })
+}
 /*
 function renderInvestments() {
   data.forEach((product) => {
@@ -33,7 +57,7 @@ function renderInvestments() {
         `;
   });
 }*/
-
+/*
 function renderInvestments() {
   data.forEach((product) => {
     $products.innerHTML += `
@@ -49,7 +73,9 @@ function renderInvestments() {
             </div>
         `;
   });
-}
+}*/
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
