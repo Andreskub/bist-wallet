@@ -6,13 +6,18 @@ function setCart(){
   updateCart();
 }
 
-//Add to cart
+// add investment to cart
 function addToCart(id) {
   if (cart.some((item) => item.id === id)) {
-    changeNumberOfUnits("plus", id);
+    Swal.fire({
+      title: 'Error!',
+      text: 'This product is already in cart',
+      icon: 'error',
+      confirmButtonText: 'Cool',
+    })
   } else {
-    const item = data.find((product) => product.id == id);
-
+    const item = productos.find((product) => product.id == id);
+    
     cart.push({
       ...item,
       numberOfUnits: 1,
@@ -54,7 +59,7 @@ function renderCartItems() {
   $cart.innerHTML = ""; // clear cart element
   cart.forEach((item) => {
     $cart.innerHTML += `
-      <div class="cart-item">
+      <div class="cart-item d-flex justify-content-around">
         <div class="item-info" onclick="removeItemFromCart(${item.id})">
           <img src="${item.img}" alt="${item.name}">
           <h4>${item.name}</h4>
@@ -62,34 +67,7 @@ function renderCartItems() {
         <div class="unit-price">
           <small>$</small>${item.price}
         </div>
-        <div class="units">
-          <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
-          <div class="number">${item.numberOfUnits}</div>
-          <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
-        </div>
       </div>
     `;
   });
-}
-
-// change number of units for an item
-function changeNumberOfUnits(action, id) {
-  cart = cart.map((item) => {
-    let numberOfUnits = item.numberOfUnits;
-
-    if (item.id === id) {
-      if (action === "minus" && numberOfUnits > 1) {
-        numberOfUnits--;
-      } else if (action === "plus" && numberOfUnits < item.instock) {
-        numberOfUnits++;
-      }
-    }
-
-    return {
-      ...item,
-      numberOfUnits,
-    };
-  });
-
-  updateCart();
 }

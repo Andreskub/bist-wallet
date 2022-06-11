@@ -1,42 +1,34 @@
-class Investment {
-  constructor(amount, days, investmentReturn){
-    this.amount = amount;
-    this.period = days;
-    this.return = investmentReturn;
-  }
-}
-
-/* ---------------------------------------------------------------------------- */
-
 const $products = document.querySelector(".products");
 const $cart = document.querySelector(".cart-items");
 const $subtotal = document.querySelector(".subtotal");
 const $totalItems = document.querySelector(".total-items-in-cart");
+let productos;
 
-console.log(cart);
 
-function renderInvestments() {
-  data.forEach((product) => {
+async function getDb() {
+  const data = await fetch('js/data.json');
+  productos = await data.json();
+  renderInvestments();
+}
+
+async function renderInvestments() {
+  await productos.forEach((product) => {
     $products.innerHTML += `
-            <div class="col-lg-6 col-sm-12 item">
-              <div class="item-container">
-                <div class="item-img">
-                  <img src="${product.img}" alt="${product.name}">
-                </div>
-                <div class="desc">
-                  <h2>${product.name}</h2>
-                  <h2><small>$</small>${product.price}</h2>
-                </div>
-                <div class="add-to-cart" onclick="addToCart(${product.id})">
-                  <img src="./assets/cart.png" alt="add to cart">
-                </div>
-              </div>
-            </div>
-        `;
-  });
+                  <div class="card col-md-4 displayProduct">
+                      <img src="${product.img}" alt="${product.name} photo" class="card-img-top productImage" >
+                      <div class="card-body">
+                          <h5 class="card-title">${product.name}</h5>
+                          <p class="card-text">$${product.price}</p>
+                      </div>
+                      <div class="add-to-cart" onclick="addToCart(${product.id})">
+                          <img src="./assets/cart-icon.png" alt="add to cart">
+                      </div>
+                  </div>
+              `;
+  })
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderInvestments();
+  getDb();
   setCart();
 });
