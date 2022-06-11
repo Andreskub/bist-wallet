@@ -1,37 +1,37 @@
 [
     {
       "id": 1,
-      "name": "Plazo Fijo",
+      "name": "Fixed Term",
       "investmentReturn": 300,
-      "img": "./assets/bitcoin-transparent.png",
+      "img": "./assets/investments-icons/plazoFijo.jpg",
       "price": 300
     },
     {
       "id": 2,
-      "name": "Fondos Fima",
+      "name": "FIMA Funds",
       "investmentReturn": 200,
-      "img": "./assets/bitcoin-transparent.png",
+      "img": "./assets/investments-icons/fima.jpg",
       "price": 200
     },
     {
       "id": 3,
-      "name": "Bonos Acciones CEDEAR",
+      "name": "Bonds Shares CEDEAR",
       "investmentReturn": 200,
-      "img": "./assets/bitcoin-transparent.png",
+      "img": "./assets/investments-icons/cedear.jpg",
       "price": 100
     },
     {
       "id": 4,
-      "name": "Limitaciones Primarias",
+      "name": "Primary Tenders",
       "investmentReturn": 200,
-      "img": "./assets/bitcoin-transparent.png",
+      "img": "./assets/investments-icons/licitacionesPrimarias.png",
       "price": 50
     },
     {
       "id": 5,
-      "name": "ETF (Fondos Cotizados)",
+      "name": "ETFs (Exchange Traded Funds)",
       "investmentReturn": 200,
-      "img": "./assets/bitcoin-transparent.png",
+      "img": "./assets/investments-icons/etf.jpg",
       "price": 100
     }
 ]

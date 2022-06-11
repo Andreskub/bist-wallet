@@ -6,28 +6,17 @@ function setCart(){
   updateCart();
 }
 
-//Add to cart
+// add investment to cart
 function addToCart(id) {
   if (cart.some((item) => item.id === id)) {
     Swal.fire({
       title: 'Error!',
-      text: 'The product is already in cart',
+      text: 'This product is already in cart',
       icon: 'error',
       confirmButtonText: 'Cool',
     })
   } else {
-    console.log("id:")
-    console.log(id)
-
-    const item = fetch('js/data.json')
-        .then( (resp) => resp.json())
-        .then( (data) => {
-          console.log(data);
-          data.find((product) => product.id == id);
-        })
-    //const item = data.find((product) => product.id == id);
-    console.log("item:")
-    console.log(item);
+    const item = productos.find((product) => product.id == id);
     
     cart.push({
       ...item,

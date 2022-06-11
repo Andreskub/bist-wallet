@@ -60,7 +60,7 @@ h1 {
 
 .iconImage {
   max-width: 200px;
-  max-height: 200px;
+  /*max-height: 200px;*/
 }
 
 .boxBorder {
@@ -104,18 +104,14 @@ h1 {
 
 .displayProduct {
   margin: 10px;
-  border-radius: 10px;
   padding: 0px;
   width: 15rem;
-  /*animation: textMove 0.4s infinite alternate;*/
+  height: 360px;
 }
 
 .productImage {
-  height: 256px;
-  min-width: 256px;
+  height: 150px;
 }
-
-
 
 /* ----------------------------------------- */ 
 .cart {
@@ -169,11 +165,18 @@ h1 {
 .column1 {
   font-size: 1.3rem;
 }
+/*
+.cart-footer {
+  min-width: max-content;
+  position: absolute;
+  bottom: 0;
+}*/
 
 .cart-footer div {
   align-items: center;
   padding: 15px 0;
   font-size: 1.3rem;
+  width: 100%;
 }
 
 .cart-footer .subtotal {
@@ -184,4 +187,5 @@ h1 {
   background-color: #F2CC8F;
 
   cursor: pointer;
+  
 }
