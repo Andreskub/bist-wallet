@@ -11,10 +11,26 @@ body {
   background-color:#81B29A;
   align-items: center;
   text-align: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 header {
-  background-color: #F2CC8F;
+  /*background-color: #F2CC8F;*/
+  background-color: transparent;
 }
 
 main {
@@ -22,28 +38,12 @@ main {
 }
 
 footer {
-  background-color: #F2CC8F;
+  background-color: transparent;
 }
 
 h1 {
   color: white;
   font-size: 50px;
-}
-
-.containerStyle {
-  text-align: center;
-  padding: 40px;
-}
-
-.containerStyle2 {
-  background-color: aliceblue;
-  text-align: center;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
 }
 
 .buttonStyle {
@@ -77,7 +77,7 @@ h1 {
 .waviy {
   position: relative;
   -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
-  font-size: 60px;
+  font-size: 100px;
   padding: 10px;
 }
 .waviy span {
@@ -106,7 +106,7 @@ h1 {
   margin: 10px;
   padding: 0px;
   width: 15rem;
-  height: 360px;
+  height: 360px;	
 }
 
 .productImage {
@@ -165,12 +165,6 @@ h1 {
 .column1 {
   font-size: 1.3rem;
 }
-/*
-.cart-footer {
-  min-width: max-content;
-  position: absolute;
-  bottom: 0;
-}*/
 
 .cart-footer div {
   align-items: center;
