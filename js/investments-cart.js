@@ -54,6 +54,33 @@ function removeItemFromCart(id) {
   updateCart();
 }
 
+function clearCart(){
+  var len = Object.keys(cart).length;
+  
+  if(len == 0){
+    Swal.fire({
+      title: 'Warning!',
+      text: 'The cart is already empty',
+      icon: 'warning',
+      confirmButtonText: 'Ok',
+    })
+  } else {
+    cart.forEach((item) => {
+      removeItemFromCart(item.id);
+    })
+
+    Swal.fire({
+      title: 'Purchased!',
+      text: 'Your order was submitted correcltly',
+      icon: 'success',
+      timer: 4000,
+    timerProgressBar: true
+      
+    })
+  }
+
+}
+
 // render cart items
 function renderCartItems() {
   $cart.innerHTML = ""; // clear cart element
